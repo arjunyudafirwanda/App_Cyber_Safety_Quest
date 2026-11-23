@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10172b" />
+    <meta
+      name="description"
+      content="Cyber Safety Quest — game edukasi keamanan digital untuk remaja. Selesaikan 20 misi dan jadilah Cyber Hero."
+    />
+    <meta name="author" content="Arjun Yuda Firwanda" />
+    <title>Cyber Safety Quest | Digital Safety Game</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="Cyber Safety Quest beranda">
+          <img src="assets/images/logo.svg" alt="" class="brand-logo" />
+          <span class="brand-copy"
+            ><strong>CYBER SAFETY</strong><small>QUEST ACADEMY</small></span
+          >
+        </a>
+        <div class="header-actions">
+          <div class="player-summary" id="playerSummary" hidden>
+            <span class="player-avatar"
+              ><i class="fa-solid fa-user-shield" aria-hidden="true"></i
+            ></span>
+            <span class="player-summary-copy"
+              ><small>CYBER HERO</small
+              ><strong id="headerPlayerName">Player</strong></span
+            >
+            <span class="header-divider"></span>
+            <span class="header-stat"
+              ><small>LEVEL</small
+              ><strong id="headerLevel">01 / 20</strong></span
+            >
+            <span class="header-divider"></span>
+            <span class="header-stat"
+              ><small>POINTS</small><strong id="headerScore">0</strong></span
+            >
+          </div>
+          <button
+            type="button"
+            class="icon-button theme-button"
+            id="themeToggle"
+            aria-label="Ganti tema"
+            title="Ganti tema"
+          >
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-grid page-shell">
+          <div class="welcome-copy">
+            <span class="eyebrow"
+              ><span class="eyebrow-pulse"></span> DIGITAL CITIZENSHIP · CYBER
+              AWARENESS</span
+            >
+            <h1>Think smart.<br /><span>Stay safe.</span></h1>
+            <p class="welcome-lead">
+              Masuki dunia investigasi digital. Pecahkan kasus, kenali ancaman
+              online, dan pelajari cara melindungi dirimu di dunia digital.
+            </p>
+            <div class="welcome-highlights">
+              <div>
+                <span class="highlight-icon cyan"
+                  ><i class="fa-solid fa-shield-halved"></i></span
+                ><span
+                  ><strong>20 Misi Investigasi</strong
+                  ><small>Tantangan bertahap dan nyata</small></span
+                >
+              </div>
+              <div>
+                <span class="highlight-icon violet"
+                  ><i class="fa-solid fa-user-secret"></i></span
+                ><span
+                  ><strong>5 Zona Keamanan</strong
+                  ><small>Jelajahi kasus digital</small></span
+                >
+              </div>
+              <div>
+                <span class="highlight-icon green"
+                  ><i class="fa-solid fa-trophy"></i></span
+                ><span
+                  ><strong>Jadilah Cyber Hero</strong
+                  ><small>Kumpulkan skor dan lencana</small></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="login-card">
+            <div class="login-card-top">
+              <span class="login-logo"
+                ><i class="fa-solid fa-fingerprint"></i></span
+              ><span class="login-top-label">AGENT REGISTRATION</span
+              ><span class="secure-badge"
+                ><i class="fa-solid fa-lock"></i> SECURE</span
+              >
+            </div>
+            <div class="login-illustration" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="shield-core">
+                <i class="fa-solid fa-shield-halved"></i
+                ><span class="shield-check"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+              </div>
+              <span class="float-symbol symbol-one"
+                ><i class="fa-solid fa-key"></i
+              ></span>
+              <span class="float-symbol symbol-two"
+                ><i class="fa-solid fa-fish"></i
+              ></span>
+              <span class="float-symbol symbol-three"
+                ><i class="fa-solid fa-user-lock"></i
+              ></span>
+              <span class="float-symbol symbol-four"
+                ><i class="fa-solid fa-wifi"></i
+              ></span>
+            </div>
+            <form id="startForm" class="start-form" novalidate>
+              <div class="form-heading">
+                <span>WELCOME, DETECTIVE</span>
+                <h2>Siap memulai misi?</h2>
+                <p>Buat profil untuk menyimpan perjalanan investigasimu.</p>
+              </div>
+              <label for="playerNameInput">Nama detektif</label>
+              <div class="input-wrap">
+                <i class="fa-regular fa-user" aria-hidden="true"></i
+                ><input
+                  id="playerNameInput"
+                  name="playerName"
+                  type="text"
+                  minlength="2"
+                  maxlength="24"
+                  autocomplete="nickname"
+                  placeholder="Masukkan nama kamu"
+                  required
+                />
+              </div>
+              <label for="playerAgeInput">Usia</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-cake-candles" aria-hidden="true"></i
+                ><input
+                  id="playerAgeInput"
+                  name="playerAge"
+                  type="number"
+                  min="13"
+                  max="16"
+                  inputmode="numeric"
+                  placeholder="13–16 tahun"
+                  required
+                />
+              </div>
+              <p class="form-hint">
+                Untuk remaja usia 13–16 tahun · Profil tersimpan di perangkat
+                ini.
+              </p>
+              <p class="form-error" id="startError" role="alert" hidden></p>
+              <button class="btn btn-primary btn-start" type="submit">
+                <span id="startButtonText">Masuk Detective HQ</span
+                ><i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+            <div class="login-card-footer">
+              <i class="fa-solid fa-user-shield"></i> Belajar melindungi diri,
+              satu misi dalam satu waktu.
+            </div>
+          </div>
+        </div>
+        <div class="welcome-bottom page-shell">
+          <span
+            ><i class="fa-solid fa-graduation-cap"></i> LEARN · INVESTIGATE ·
+            PROTECT</span
+          ><span>PRIVACY <b>·</b> SECURITY <b>·</b> DIGITAL CITIZENSHIP</span>
+        </div>
+      </section>
+
+      <section class="dashboard page-shell" id="dashboard" hidden>
+        <div class="dashboard-hero">
+          <div class="dashboard-hero-copy">
+            <span class="section-kicker">DETECTIVE HEADQUARTERS</span>
+            <h1>Welcome back, <span id="welcomePlayerName">Agent</span>!</h1>
+            <p>
+              Pilih berkas investigasi dan bantu menjaga dunia digital tetap
+              aman.
+            </p>
+            <div class="agent-tags">
+              <span id="gradeTag"
+                ><i class="fa-solid fa-graduation-cap"></i> SMP · KELAS
+                VII</span
+              ><span id="ageTag"
+                ><i class="fa-solid fa-user"></i> 13 TAHUN</span
+              >
+            </div>
+          </div>
+          <div class="hero-emblem" aria-hidden="true">
+            <div class="emblem-ring"></div>
+            <div class="emblem-center">
+              <i class="fa-solid fa-user-secret"></i
+              ><span>CYBER<br />HERO</span>
+            </div>
+            <span class="emblem-orbit orbit-a"
+              ><i class="fa-solid fa-shield"></i></span
+            ><span class="emblem-orbit orbit-b"
+              ><i class="fa-solid fa-fingerprint"></i
+            ></span>
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <article class="overview-card">
+            <span class="overview-icon icon-blue"
+              ><i class="fa-solid fa-star"></i
+            ></span>
+            <div>
+              <small>TOTAL POINTS</small><strong id="overviewScore">0</strong
+              ><span>Skor petualangan</span>
+            </div>
+          </article>
+          <article class="overview-card">
+            <span class="overview-icon icon-green"
+              ><i class="fa-solid fa-folder-open"></i
+            ></span>
+            <div>
+              <small>CASE RESOLVED</small
+              ><strong id="overviewResolved">0 / 20</strong
+              ><span>Misi diselesaikan / ditinjau</span>
+            </div>
+          </article>
+          <article class="overview-card">
+            <span class="overview-icon icon-violet"
+              ><i class="fa-solid fa-medal"></i
+            ></span>
+            <div>
+              <small>CASES SOLVED</small><strong id="overviewSolved">0</strong
+              ><span>Berhasil dijawab benar</span>
+            </div>
+          </article>
+          <article class="overview-card">
+            <span class="overview-icon icon-orange"
+              ><i class="fa-solid fa-fire"></i
+            ></span>
+            <div>
+              <small>CURRENT STREAK</small><strong id="overviewStreak">0</strong
+              ><span>Jawaban pertama benar</span>
+            </div>
+          </article>
+        </div>
+
+        <section class="overall-progress panel">
+          <div class="overall-progress-top">
+            <div>
+              <span class="panel-overline">YOUR DETECTIVE RECORD</span>
+              <h2>Progress investigasi</h2>
+            </div>
+            <strong id="overallPercent">0%</strong>
+          </div>
+          <div class="progress-track">
+            <span id="overallProgressBar"></span>
+          </div>
+          <div class="progress-caption">
+            <span id="overallProgressText"
+              >Belum ada kasus yang diselesaikan</span
+            ><span>20 CASE FILES</span>
+          </div>
+        </section>
+
+        <section class="cases-section" id="caseFiles">
+          <div class="section-title-row">
+            <div>
+              <span class="panel-overline">CHOOSE YOUR INVESTIGATION</span>
+              <h2>Case Files <span>●</span></h2>
+              <p>Pilih zona dan buka kasus yang ingin kamu pecahkan.</p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-outline btn-small"
+              id="switchPlayerButton"
+            >
+              <i class="fa-solid fa-users"></i> Ganti Pemain
+            </button>
+          </div>
+          <div
+            class="zone-filters"
+            id="zoneFilters"
+            aria-label="Filter zona investigasi"
+          >
+            <button
+              class="zone-filter active"
+              type="button"
+              data-zone="all"
+              aria-pressed="true"
+            >
+              <i class="fa-solid fa-layer-group"></i> Semua Zona
+            </button>
+            <button
+              class="zone-filter"
+              type="button"
+              data-zone="identity"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-id-card"></i> Digital Identity
+            </button>
+            <button
+              class="zone-filter"
+              type="button"
+              data-zone="password"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-key"></i> Password Defense
+            </button>
+            <button
+              class="zone-filter"
+              type="button"
+              data-zone="phishing"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-fish"></i> Phishing Radar
+            </button>
+            <button
+              class="zone-filter"
+              type="button"
+              data-zone="footprint"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-shoe-prints"></i> Digital Footprint
+            </button>
+            <button
+              class="zone-filter"
+              type="button"
+              data-zone="device"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-wifi"></i> Device & Network
+            </button>
+          </div>
+          <div class="case-grid" id="caseGrid"></div>
+        </section>
+        <section class="tip-strip">
+          <span class="tip-icon"><i class="fa-solid fa-lightbulb"></i></span>
+          <div>
+            <strong>Detective tip</strong>
+            <p>
+              Jangan terburu-buru memilih jawaban. Periksa bukti, pikirkan
+              risikonya, lalu tentukan tindakan paling aman.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section class="mission-screen page-shell" id="missionScreen" hidden>
+        <div class="mission-topbar">
+          <button class="back-button" type="button" id="backToCasesButton">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Case Files
+          </button>
+          <div class="mission-top-meta">
+            <span id="missionZoneLabel">DIGITAL IDENTITY</span
+            ><span id="missionLevelLabel">CASE 01 / 20</span>
+          </div>
+        </div>
+        <div class="mission-layout">
+          <div class="mission-main">
+            <section class="mission-heading panel">
+              <div class="mission-heading-icon" id="missionIcon">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="mission-heading-copy">
+                <span class="panel-overline" id="missionDifficulty"
+                  >LEVEL PEMULA</span
+                >
+                <h1 id="missionTitle">Profil Digital yang Aman</h1>
+                <p id="missionSubtitle">INVESTIGATION FILE · CASE 01</p>
+              </div>
+              <span class="case-status" id="missionStatus">NEW CASE</span>
+            </section>
+            <section class="case-brief panel">
+              <div class="case-brief-heading">
+                <span><i class="fa-solid fa-file-lines"></i> CASE BRIEF</span
+                ><span>CONFIDENTIAL</span>
+              </div>
+              <p id="missionScenario"></p>
+              <div class="evidence-list" id="evidenceList"></div>
+            </section>
+            <section class="question-panel panel">
+              <div class="question-top">
+                <span class="question-label"
+                  ><i class="fa-solid fa-magnifying-glass"></i> DETECTIVE
+                  QUESTION</span
+                ><span class="attempt-indicator" id="attemptIndicator"
+                  >ATTEMPT 1 / 3</span
+                >
+              </div>
+              <h2 id="missionQuestion"></h2>
+              <div class="answer-list" id="answerList"></div>
+              <div class="hint-box" id="hintBox" hidden>
+                <i class="fa-solid fa-lightbulb"></i><span id="hintText"></span>
+              </div>
+              <div
+                class="feedback-box"
+                id="feedbackBox"
+                hidden
+                aria-live="polite"
+              >
+                <div class="feedback-heading" id="feedbackHeading"></div>
+                <p id="feedbackText"></p>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-feedback"
+                  id="feedbackContinueButton"
+                >
+                  Lanjutkan <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </section>
+          </div>
+          <aside class="mission-sidebar">
+            <section class="sidebar-card panel">
+              <span class="panel-overline">MISSION PROGRESS</span>
+              <div class="mission-progress-number">
+                <strong id="missionProgressPercent">0%</strong
+                ><small>RESOLVED</small>
+              </div>
+              <div class="progress-track">
+                <span id="missionProgressBar"></span>
+              </div>
+              <div class="sidebar-mini-stats">
+                <div>
+                  <small>POINTS</small><strong id="sidebarScore">0</strong>
+                </div>
+                <div>
+                  <small>STREAK</small><strong id="sidebarStreak">0</strong>
+                </div>
+              </div>
+            </section>
+            <section class="sidebar-card security-card">
+              <div class="security-card-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span class="panel-overline">CYBER SAFETY RULE</span>
+              <h3>Pause. Check. Protect.</h3>
+              <p>
+                Berhenti sejenak, periksa informasi, dan lindungi data sebelum
+                bertindak.
+              </p>
+            </section>
+            <section class="sidebar-card panel">
+              <span class="panel-overline">CASE EVIDENCE</span>
+              <div class="evidence-mini">
+                <i class="fa-solid fa-fingerprint"></i
+                ><span>Periksa detail kecil</span>
+              </div>
+              <div class="evidence-mini">
+                <i class="fa-solid fa-triangle-exclamation"></i
+                ><span>Kenali tanda risiko</span>
+              </div>
+              <div class="evidence-mini">
+                <i class="fa-solid fa-shield-heart"></i
+                ><span>Pilih langkah aman</span>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="siteFooter">
+      <div class="footer-inner page-shell">
+        <a class="footer-brand" href="#home"
+          ><img src="assets/images/logo.svg" alt="" /><span
+            >CYBER SAFETY QUEST</span
+          ></a
+        >
+        <p>
+          Designed & Developed by <strong>Arjun Yuda Firwanda</strong> · ©
+          <span id="currentYear"></span> All rights reserved.
+        </p>
+        <span class="footer-tagline">THINK SMART · STAY SAFE</span>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast-icon"><i class="fa-solid fa-circle-info"></i></span
+      ><span id="toastMessage">Information</span>
+    </div>
+
+    <div class="modal-backdrop" id="penaltyModal" hidden>
+      <section
+        class="penalty-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="penaltyTitle"
+      >
+        <div class="penalty-symbol">
+          <i class="fa-solid fa-shield-virus"></i>
+        </div>
+        <span class="modal-kicker">SECURITY CHECKPOINT</span>
+        <h2 id="penaltyTitle">Let's investigate again!</h2>
+        <p class="penalty-description" id="penaltyDescription">
+          Tiga percobaan belum tepat. Periksa kembali bukti dan pelajari
+          penjelasannya.
+        </p>
+        <div class="penalty-score-row">
+          <div><small>BEFORE</small><strong id="scoreBefore">0</strong></div>
+          <div class="penalty-deduction">
+            <small>PENALTY</small><strong id="scoreDeduction">−20</strong>
+          </div>
+          <div><small>AFTER</small><strong id="scoreAfter">0</strong></div>
+        </div>
+        <button
+          class="btn btn-primary modal-action"
+          type="button"
+          id="closePenaltyButton"
+        >
+          Saya Mengerti <i class="fa-solid fa-check"></i>
+        </button>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="resultModal" hidden>
+      <section
+        class="result-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resultTitle"
+      >
+        <div class="result-icon"><i class="fa-solid fa-award"></i></div>
+        <span class="modal-kicker">CASE RESOLVED</span>
+        <h2 id="resultTitle">Excellent detective work!</h2>
+        <p id="resultDescription">Kamu berhasil menyelesaikan investigasi.</p>
+        <div class="result-points">
+          <strong id="resultPoints">+100</strong><small>POINTS EARNED</small>
+        </div>
+        <div class="result-stars" id="resultStars">★★★</div>
+        <button
+          type="button"
+          class="btn btn-primary modal-action"
+          id="resultContinueButton"
+        >
+          Kembali ke Case Files <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </section>
+    </div>
+
+    <script src="assets/js/missions.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

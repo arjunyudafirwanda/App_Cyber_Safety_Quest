@@ -1,0 +1,478 @@
+(() => {
+  "use strict";
+
+  window.CYBER_MISSIONS = [
+    {
+      id: 1,
+      zone: "identity",
+      zoneName: "Digital Identity",
+      icon: "fa-id-card",
+      title: "Profil Digital yang Aman",
+      difficulty: "Pemula",
+      scenario:
+        "Nadia ingin membuat akun belajar online. Formulir meminta nama lengkap, tanggal lahir, alamat rumah, dan nama sekolah. Ia ingin segera mengisi semuanya agar bisa mulai belajar.",
+      evidence: ["Formulir akun", "Data pribadi", "Aplikasi belajar"],
+      question: "Apa tindakan paling aman yang sebaiknya dilakukan Nadia?",
+      options: [
+        "Mengisi semua data karena aplikasi memintanya",
+        "Memeriksa apakah data itu benar-benar diperlukan dan meminta arahan orang tua",
+        "Menggunakan alamat rumah sebagai nama pengguna",
+        "Membagikan formulir tersebut ke grup kelas",
+      ],
+      correct: 1,
+      explanation:
+        "Data pribadi harus dibagikan seperlunya. Nadia sebaiknya memeriksa kebutuhan data dan berdiskusi dengan orang tua atau guru sebelum memberikan informasi sensitif.",
+      hint: "Pikirkan prinsip: bagikan data seperlunya dan minta bantuan orang dewasa tepercaya.",
+    },
+    {
+      id: 2,
+      zone: "identity",
+      zoneName: "Digital Identity",
+      icon: "fa-user-shield",
+      title: "Jejak Digital",
+      difficulty: "Pemula",
+      scenario:
+        "Raka mengunggah foto kartu pelajarnya ke media sosial. Foto itu terlihat jelas memuat nama lengkap, nomor induk, dan nama sekolah.",
+      evidence: [
+        "Foto kartu pelajar",
+        "Unggahan publik",
+        "Informasi identitas",
+      ],
+      question: "Mengapa unggahan Raka perlu ditinjau kembali?",
+      options: [
+        "Foto kartu pelajar selalu membuat akun lebih populer",
+        "Informasi identitas dapat disalin dan disalahgunakan orang lain",
+        "Unggahan foto tidak pernah tersimpan di internet",
+        "Nomor induk hanya bisa dibaca oleh teman dekat",
+      ],
+      correct: 1,
+      explanation:
+        "Informasi yang sudah dibagikan di internet dapat disalin, disimpan, atau disebarkan. Hindari mengunggah dokumen identitas dan batasi informasi pribadi.",
+      hint: "Jejak digital dapat bertahan lebih lama daripada unggahan yang terlihat di layar.",
+    },
+    {
+      id: 3,
+      zone: "identity",
+      zoneName: "Digital Identity",
+      icon: "fa-user-lock",
+      title: "Berbagi Lokasi",
+      difficulty: "Menengah",
+      scenario:
+        "Sebuah permainan meminta izin lokasi setiap saat, padahal fitur permainan tetap berjalan tanpa mengetahui lokasi pemain.",
+      evidence: ["Izin lokasi", "Pengaturan aplikasi", "Privasi"],
+      question: "Apa pilihan yang paling bijak?",
+      options: [
+        "Selalu izinkan semua akses",
+        "Berikan izin hanya jika diperlukan dan pilih saat aplikasi digunakan bila tersedia",
+        "Bagikan lokasi langsung ke semua pemain",
+        "Matikan seluruh fitur keamanan perangkat",
+      ],
+      correct: 1,
+      explanation:
+        "Izin aplikasi sebaiknya sesuai kebutuhan. Periksa pengaturan privasi dan batasi akses yang tidak relevan dengan fungsi aplikasi.",
+      hint: "Izin aplikasi perlu sesuai fungsi, bukan diberikan tanpa pertimbangan.",
+    },
+    {
+      id: 4,
+      zone: "identity",
+      zoneName: "Digital Identity",
+      icon: "fa-fingerprint",
+      title: "Identitas dan Impersonasi",
+      difficulty: "Menengah",
+      scenario:
+        "Muncul akun baru yang menggunakan foto profil dan nama temanmu. Akun itu mengirim pesan meminta uang untuk keadaan darurat.",
+      evidence: ["Akun tiruan", "Permintaan uang", "Nama teman"],
+      question: "Langkah pertama yang paling tepat adalah ...",
+      options: [
+        "Langsung mengirim uang",
+        "Mengecek melalui saluran lain yang sudah dikenal dan melaporkan akun mencurigakan",
+        "Meneruskan pesan ke semua kontak",
+        "Memberikan kata sandi agar akun itu membuktikan identitas",
+      ],
+      correct: 1,
+      explanation:
+        "Akun tiruan dapat digunakan untuk penipuan. Verifikasi identitas melalui nomor atau saluran yang sudah diketahui, lalu laporkan akun tersebut.",
+      hint: "Jangan percaya hanya karena nama dan foto profil terlihat familiar.",
+    },
+    {
+      id: 5,
+      zone: "password",
+      zoneName: "Password Defense",
+      icon: "fa-key",
+      title: "Membangun Password Kuat",
+      difficulty: "Pemula",
+      scenario:
+        "Dina menggunakan kata sandi 'dina123' untuk akun sekolah, permainan, dan email. Ia ingin membuat kata sandi yang lebih aman.",
+      evidence: ["Password pendek", "Dipakai berulang", "Akun penting"],
+      question: "Manakah kebiasaan kata sandi yang paling aman?",
+      options: [
+        "Menggunakan tanggal lahir agar mudah diingat",
+        "Membuat kata sandi panjang dan unik untuk setiap akun",
+        "Menggunakan satu kata sandi untuk semua akun",
+        "Menulis kata sandi di bio media sosial",
+      ],
+      correct: 1,
+      explanation:
+        "Gunakan kata sandi panjang, unik, dan sulit ditebak untuk setiap akun. Jangan memakai nama atau tanggal lahir yang mudah diketahui orang lain.",
+      hint: "Kunci yang sama untuk banyak pintu akan membuat semua pintu berisiko jika satu kunci bocor.",
+    },
+    {
+      id: 6,
+      zone: "password",
+      zoneName: "Password Defense",
+      icon: "fa-shield-halved",
+      title: "Autentikasi Dua Faktor",
+      difficulty: "Menengah",
+      scenario:
+        "Akun email Bima menawarkan verifikasi tambahan melalui kode sekali pakai di ponsel. Bima merasa proses masuk akan sedikit lebih lama.",
+      evidence: ["Kode sekali pakai", "Login akun", "Verifikasi tambahan"],
+      question: "Apa manfaat utama autentikasi dua faktor (2FA)?",
+      options: [
+        "Menghapus kebutuhan kata sandi selamanya",
+        "Menambah lapisan pemeriksaan selain kata sandi",
+        "Membuat semua pesan otomatis aman",
+        "Membagikan kode login kepada teman",
+      ],
+      correct: 1,
+      explanation:
+        "2FA menambahkan bukti kedua saat login. Jika kata sandi diketahui orang lain, akun masih memiliki lapisan perlindungan tambahan.",
+      hint: "Bayangkan dua kunci berbeda yang perlu diperiksa sebelum pintu terbuka.",
+    },
+    {
+      id: 7,
+      zone: "password",
+      zoneName: "Password Defense",
+      icon: "fa-lock",
+      title: "Kode OTP Rahasia",
+      difficulty: "Menengah",
+      scenario:
+        "Seseorang menelepon mengaku petugas layanan digital. Ia meminta kode OTP yang baru masuk ke ponselmu agar akun tidak diblokir.",
+      evidence: ["Panggilan tak dikenal", "Kode OTP", "Ancaman akun diblokir"],
+      question: "Apa yang harus kamu lakukan?",
+      options: [
+        "Menyebutkan OTP agar akun aman",
+        "Menolak, mengakhiri panggilan, dan menghubungi layanan resmi",
+        "Mengirim tangkapan layar OTP",
+        "Meminta penelepon menebak kata sandimu",
+      ],
+      correct: 1,
+      explanation:
+        "OTP adalah kode rahasia untuk memverifikasi akses. Jangan pernah membagikannya kepada siapa pun, termasuk orang yang mengaku petugas.",
+      hint: "Kode OTP berfungsi seperti kunci sementara milikmu.",
+    },
+    {
+      id: 8,
+      zone: "password",
+      zoneName: "Password Defense",
+      icon: "fa-vault",
+      title: "Pengelola Kata Sandi",
+      difficulty: "Lanjutan",
+      scenario:
+        "Kamu memiliki banyak akun dengan kata sandi berbeda. Kamu mulai menuliskannya di catatan yang dapat dilihat siapa pun ketika ponsel dipinjam.",
+      evidence: ["Banyak akun", "Catatan terbuka", "Penyimpanan kredensial"],
+      question: "Praktik yang lebih baik adalah ...",
+      options: [
+        "Menyimpan semua kata sandi di unggahan publik",
+        "Menggunakan pengelola kata sandi tepercaya dengan pengamanan kuat dan perangkat terkunci",
+        "Mengirim kata sandi ke grup pribadi",
+        "Menggunakan kata sandi yang sama agar sederhana",
+      ],
+      correct: 1,
+      explanation:
+        "Pengelola kata sandi tepercaya dapat membantu membuat dan menyimpan kata sandi unik. Lindungi perangkat dan akun utama dengan autentikasi yang kuat.",
+      hint: "Pilih tempat penyimpanan khusus yang terlindungi, bukan catatan terbuka.",
+    },
+    {
+      id: 9,
+      zone: "phishing",
+      zoneName: "Phishing Radar",
+      icon: "fa-fish",
+      title: "Mengenali Pesan Phishing",
+      difficulty: "Pemula",
+      scenario:
+        "Kamu menerima pesan: 'SELAMAT! Kamu menang hadiah. Klik tautan ini dalam 5 menit dan masukkan password untuk klaim hadiah.' Pengirimnya tidak dikenal.",
+      evidence: [
+        "Hadiah mendadak",
+        "Batas waktu mendesak",
+        "Permintaan password",
+      ],
+      question: "Apa tanda paling kuat bahwa pesan tersebut mencurigakan?",
+      options: [
+        "Pesan menggunakan tanda seru",
+        "Pesan mendesak dan meminta password melalui tautan",
+        "Pesan diterima pada siang hari",
+        "Pesan memiliki gambar berwarna",
+      ],
+      correct: 1,
+      explanation:
+        "Phishing sering memancing korban dengan hadiah atau ancaman, membuat rasa mendesak, dan mengarahkan ke tautan untuk mencuri kredensial.",
+      hint: "Perhatikan kombinasi hadiah, tekanan waktu, dan permintaan informasi rahasia.",
+    },
+    {
+      id: 10,
+      zone: "phishing",
+      zoneName: "Phishing Radar",
+      icon: "fa-link",
+      title: "Memeriksa Tautan",
+      difficulty: "Menengah",
+      scenario:
+        "Alamat situs sekolah yang biasa digunakan adalah sekolah.example. Kamu menerima tautan sekolah-login.example.net yang meminta login ulang.",
+      evidence: ["Alamat situs berbeda", "Permintaan login", "Tautan pesan"],
+      question: "Apa langkah aman sebelum membuka tautan tersebut?",
+      options: [
+        "Langsung memasukkan password",
+        "Memeriksa alamat melalui situs resmi atau bertanya kepada guru",
+        "Membagikan tautan agar teman mencoba",
+        "Menonaktifkan antivirus",
+      ],
+      correct: 1,
+      explanation:
+        "Nama domain dapat dibuat mirip dengan situs asli. Akses layanan melalui alamat resmi yang diketik sendiri atau tautan yang sudah diverifikasi.",
+      hint: "Nama yang tampak mirip belum tentu merupakan domain resmi.",
+    },
+    {
+      id: 11,
+      zone: "phishing",
+      zoneName: "Phishing Radar",
+      icon: "fa-envelope-open-text",
+      title: "Lampiran Mencurigakan",
+      difficulty: "Menengah",
+      scenario:
+        "Email tak dikenal mengirim lampiran bernama 'Nilai_Semester.exe' dan meminta kamu segera membukanya untuk melihat hasil ujian.",
+      evidence: [
+        "Pengirim tak dikenal",
+        "Lampiran executable",
+        "Tekanan untuk membuka",
+      ],
+      question: "Apa tindakan paling aman?",
+      options: [
+        "Membuka lampiran karena berisi nilai",
+        "Tidak membuka, menghapus atau melaporkan email, dan konfirmasi ke sekolah",
+        "Mengirim lampiran kepada semua teman",
+        "Mengubah nama file lalu menjalankannya",
+      ],
+      correct: 1,
+      explanation:
+        "Lampiran executable dari pengirim tak dikenal dapat membawa malware. Jangan jalankan file mencurigakan dan verifikasi melalui saluran resmi.",
+      hint: "Jangan jalankan program dari sumber yang belum dipercaya.",
+    },
+    {
+      id: 12,
+      zone: "phishing",
+      zoneName: "Phishing Radar",
+      icon: "fa-qrcode",
+      title: "QR Code Tidak Dikenal",
+      difficulty: "Lanjutan",
+      scenario:
+        "Di tempat umum ada poster QR code bertuliskan 'Wi-Fi Gratis'. Setelah dipindai, QR tersebut membuka halaman yang meminta email, kata sandi, dan nomor kartu.",
+      evidence: [
+        "QR code anonim",
+        "Halaman login asing",
+        "Permintaan data sensitif",
+      ],
+      question: "Apa keputusan yang paling aman?",
+      options: [
+        "Mengisi semua data agar Wi-Fi aktif",
+        "Menutup halaman dan menggunakan jaringan resmi yang jelas sumbernya",
+        "Menggunakan password email utama",
+        "Meneruskan QR kepada teman",
+      ],
+      correct: 1,
+      explanation:
+        "QR code dapat menyembunyikan tujuan tautan. Periksa alamat sebelum melanjutkan dan jangan memasukkan kredensial sensitif ke halaman yang tidak dikenal.",
+      hint: "QR code hanyalah cara menyimpan tautan; isinya tetap perlu diperiksa.",
+    },
+    {
+      id: 13,
+      zone: "footprint",
+      zoneName: "Digital Footprint",
+      icon: "fa-shoe-prints",
+      title: "Unggahan yang Bertanggung Jawab",
+      difficulty: "Pemula",
+      scenario:
+        "Temanmu mengunggah foto teman lain yang sedang tertidur di kelas. Foto itu lucu menurut sebagian orang, tetapi teman yang difoto belum memberi izin.",
+      evidence: ["Foto orang lain", "Belum ada izin", "Unggahan publik"],
+      question: "Apa tindakan yang menghargai privasi?",
+      options: [
+        "Menyebarkan foto ke grup lain",
+        "Meminta izin sebelum mengunggah dan menghapus jika orang tersebut tidak nyaman",
+        "Menambahkan lokasi sekolah",
+        "Membuat meme dari foto tanpa bertanya",
+      ],
+      correct: 1,
+      explanation:
+        "Menghormati privasi berarti meminta persetujuan sebelum membagikan foto atau informasi orang lain. Hapus unggahan jika orang tersebut merasa tidak nyaman.",
+      hint: "Tanyakan apakah orang yang ada di foto setuju fotonya dibagikan.",
+    },
+    {
+      id: 14,
+      zone: "footprint",
+      zoneName: "Digital Footprint",
+      icon: "fa-comment-dots",
+      title: "Cyberbullying",
+      difficulty: "Menengah",
+      scenario:
+        "Di grup kelas, beberapa siswa berulang kali mengejek seorang teman dan membagikan komentar yang menyakitkan. Teman tersebut mulai enggan masuk grup.",
+      evidence: ["Ejekan berulang", "Grup kelas", "Dampak emosional"],
+      question: "Apa respons yang paling membantu dan aman?",
+      options: [
+        "Ikut mengejek agar tidak dikucilkan",
+        "Tidak ikut menyebarkan, simpan bukti, dukung korban, dan laporkan kepada orang dewasa tepercaya",
+        "Membalas dengan ancaman",
+        "Membuat akun anonim untuk mengejek balik",
+      ],
+      correct: 1,
+      explanation:
+        "Jangan memperkuat perundungan. Dukung korban, simpan bukti dengan aman, blokir atau laporkan pelaku, dan libatkan guru atau orang dewasa tepercaya.",
+      hint: "Utamakan keselamatan korban dan cari bantuan, bukan membalas.",
+    },
+    {
+      id: 15,
+      zone: "footprint",
+      zoneName: "Digital Footprint",
+      icon: "fa-share-nodes",
+      title: "Memeriksa Informasi",
+      difficulty: "Menengah",
+      scenario:
+        "Pesan berantai menyatakan bahwa sekolah akan diliburkan besok. Pesan itu tidak menyebut sumber dan meminta semua orang segera meneruskannya.",
+      evidence: ["Pesan berantai", "Tidak ada sumber", "Ajakan meneruskan"],
+      question: "Bagaimana cara memeriksa kebenarannya?",
+      options: [
+        "Meneruskan karena banyak yang membagikan",
+        "Memeriksa pengumuman resmi sekolah atau mengonfirmasi kepada guru",
+        "Mengubah judul agar lebih menarik",
+        "Menganggap semua pesan grup pasti benar",
+      ],
+      correct: 1,
+      explanation:
+        "Informasi perlu diperiksa melalui sumber resmi dan tepercaya sebelum dibagikan. Banyaknya orang yang meneruskan pesan tidak membuktikan kebenarannya.",
+      hint: "Cari sumber pertama dan kanal resmi, bukan jumlah penerus pesan.",
+    },
+    {
+      id: 16,
+      zone: "footprint",
+      zoneName: "Digital Footprint",
+      icon: "fa-scale-balanced",
+      title: "Hak Cipta dan Konten Digital",
+      difficulty: "Lanjutan",
+      scenario:
+        "Kamu menemukan ilustrasi menarik dari seorang seniman di internet dan ingin memakainya untuk poster tugas sekolah yang akan diunggah ke situs kelas.",
+      evidence: ["Ilustrasi milik kreator", "Poster tugas", "Publikasi online"],
+      question: "Apa praktik penggunaan konten yang tepat?",
+      options: [
+        "Menghapus tanda tangan seniman",
+        "Memeriksa izin atau lisensi, mencantumkan atribusi, dan memilih konten yang boleh digunakan",
+        "Menganggap semua gambar internet bebas hak cipta",
+        "Mengaku sebagai pembuat ilustrasi",
+      ],
+      correct: 1,
+      explanation:
+        "Karya digital tetap memiliki hak cipta. Periksa lisensi dan ketentuan penggunaan, lalu cantumkan atribusi sesuai persyaratan.",
+      hint: "Konten yang dapat dilihat atau diunduh belum tentu bebas digunakan.",
+    },
+    {
+      id: 17,
+      zone: "device",
+      zoneName: "Device & Network Safety",
+      icon: "fa-wifi",
+      title: "Wi-Fi Publik",
+      difficulty: "Pemula",
+      scenario:
+        "Kamu menggunakan Wi-Fi gratis di tempat umum. Jaringan itu tidak memiliki kata sandi dan nama jaringannya mirip dengan nama kafe.",
+      evidence: [
+        "Wi-Fi publik",
+        "Nama jaringan mirip",
+        "Jaringan tanpa kata sandi",
+      ],
+      question: "Apa kebiasaan yang lebih aman?",
+      options: [
+        "Melakukan transaksi penting melalui jaringan tersebut",
+        "Memastikan jaringan resmi kepada petugas dan menghindari aktivitas sensitif",
+        "Membagikan file pribadi ke semua pengguna",
+        "Menonaktifkan kunci layar",
+      ],
+      correct: 1,
+      explanation:
+        "Pastikan nama Wi-Fi benar melalui petugas. Hindari mengakses akun atau transaksi sensitif pada jaringan publik yang tidak tepercaya.",
+      hint: "Jaringan publik bisa saja bukan jaringan resmi tempat tersebut.",
+    },
+    {
+      id: 18,
+      zone: "device",
+      zoneName: "Device & Network Safety",
+      icon: "fa-rotate",
+      title: "Pembaruan Perangkat",
+      difficulty: "Menengah",
+      scenario:
+        "Perangkatmu menampilkan pemberitahuan pembaruan keamanan dari menu pengaturan resmi. Teman menyarankan mengabaikannya selamanya karena pembaruan hanya mengubah tampilan.",
+      evidence: [
+        "Pembaruan keamanan",
+        "Sistem operasi",
+        "Kerentanan perangkat",
+      ],
+      question: "Mengapa pembaruan keamanan penting?",
+      options: [
+        "Hanya untuk mengganti wallpaper",
+        "Memperbaiki celah keamanan dan meningkatkan perlindungan perangkat",
+        "Membuat kata sandi otomatis diketahui orang",
+        "Menghapus kebutuhan antivirus dan kehati-hatian",
+      ],
+      correct: 1,
+      explanation:
+        "Pembaruan resmi dapat memperbaiki kerentanan dan bug. Lakukan pembaruan dari pengaturan atau sumber resmi, bukan tautan acak.",
+      hint: "Pembaruan tidak hanya tentang fitur baru, tetapi juga perbaikan keamanan.",
+    },
+    {
+      id: 19,
+      zone: "device",
+      zoneName: "Device & Network Safety",
+      icon: "fa-cloud-arrow-up",
+      title: "Backup Data",
+      difficulty: "Lanjutan",
+      scenario:
+        "Laptop sekolah menyimpan proyek kelompok selama beberapa minggu. Laptop mulai bermasalah dan belum pernah ada salinan file di tempat lain.",
+      evidence: [
+        "Proyek penting",
+        "Risiko perangkat rusak",
+        "Tidak ada salinan",
+      ],
+      question: "Kebiasaan yang sebaiknya diterapkan adalah ...",
+      options: [
+        "Menyimpan satu-satunya salinan di laptop",
+        "Membuat backup berkala di media atau layanan tepercaya dan menjaga aksesnya",
+        "Mengirim file ke akun publik tanpa izin",
+        "Menghapus file lama tanpa memeriksa",
+      ],
+      correct: 1,
+      explanation:
+        "Backup membantu memulihkan data ketika perangkat rusak, hilang, atau terkena malware. Simpan salinan di lokasi aman dan perbarui secara berkala.",
+      hint: "Pikirkan apa yang terjadi jika perangkat utama tidak bisa digunakan.",
+    },
+    {
+      id: 20,
+      zone: "device",
+      zoneName: "Device & Network Safety",
+      icon: "fa-user-check",
+      title: "Rencana Respons Insiden",
+      difficulty: "Lanjutan",
+      scenario:
+        "Kamu tidak sengaja memasukkan kata sandi ke situs yang ternyata palsu. Beberapa menit kemudian ada notifikasi login dari lokasi yang tidak dikenal.",
+      evidence: [
+        "Password terlanjur dimasukkan",
+        "Login asing",
+        "Akun mungkin diambil alih",
+      ],
+      question: "Apa urutan tindakan terbaik?",
+      options: [
+        "Mengabaikan notifikasi dan tetap memakai password lama",
+        "Segera ganti kata sandi melalui situs resmi, keluarkan sesi asing, aktifkan 2FA, dan laporkan kepada pihak tepercaya",
+        "Membalas email pelaku dengan data tambahan",
+        "Membagikan kode OTP agar akun kembali",
+      ],
+      correct: 1,
+      explanation:
+        "Segera amankan akun dari situs atau aplikasi resmi: ubah kata sandi, keluar dari sesi yang tidak dikenal, aktifkan 2FA, dan minta bantuan jika diperlukan. Periksa juga akun lain jika menggunakan kata sandi yang sama.",
+      hint: "Prioritaskan memutus akses pelaku, mengamankan kredensial, dan meminta bantuan.",
+    },
+  ];
+})();
